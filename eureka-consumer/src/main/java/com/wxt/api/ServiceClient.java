@@ -13,5 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "eureka-provider")
 public interface ServiceClient {
     @RequestMapping(value = "/find")
-    public String findByName( String name);
+    String findByName(@RequestParam(value = "name") String name);
 }
